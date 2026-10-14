@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Job Application Tracker</h1>
+      <p class="sub">Track every application from applied to offer.</p>
+    </div>
+    <div class="actions">
+      <button id="addBtn" class="btn primary" type="button">+ Add application</button>
+      <button id="resetBtn" class="btn ghost" type="button">Reset demo data</button>
+    </div>
+  </header>
+
+  <section class="stats" id="stats" aria-label="Summary"></section>
+
+  <section class="toolbar">
+    <input type="search" id="search" placeholder="Search company, role or notes..." aria-label="Search">
+    <select id="filter" aria-label="Filter by status">
+      <option value="All">All statuses</option>
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Offer</option>
+      <option>Rejected</option>
+    </select>
+  </section>
+
+  <main class="board" id="board"></main>
+
+  <dialog id="dialog">
+    <form id="form" autocomplete="off">
+      <h2 id="dialogTitle">Add application</h2>
+
+      <label>Company *
+        <input type="text" id="company" required maxlength="60">
+      </label>
+      <label>Role *
+        <input type="text" id="role" required maxlength="80">
+      </label>
+      <label>Job link
+        <input type="url" id="link" placeholder="https://...">
+      </label>
+      <div class="row">
+        <label>Date applied
+          <input type="date" id="date" required>
+        </label>
+        <label>Status
+          <select id="status">
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+          </select>
+        </label>
+      </div>
+      <label>Notes
+        <textarea id="notes" rows="3" maxlength="300"></textarea>
+      </label>
+
+      <div class="dialog-actions">
+        <button type="button" id="cancelBtn" class="btn ghost">Cancel</button>
+        <button type="submit" class="btn primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
